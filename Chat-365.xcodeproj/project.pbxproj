@@ -99,12 +99,11 @@
 		E2763FA02A0E295F00DBBAF6 /* Chat-365 */ = {
 			isa = PBXGroup;
 			children = (
-				E2763FA12A0E295F00DBBAF6 /* AppDelegate.swift */,
-				E2763FA32A0E295F00DBBAF6 /* SceneDelegate.swift */,
-				E2763FA52A0E295F00DBBAF6 /* ViewController.swift */,
-				E2763FA72A0E295F00DBBAF6 /* Main.storyboard */,
-				E2763FAA2A0E296200DBBAF6 /* Assets.xcassets */,
-				E2763FAC2A0E296200DBBAF6 /* LaunchScreen.storyboard */,
+				E2763FD72A0E2AC100DBBAF6 /* FirebaseMAnager */,
+				E2763FD52A0E2A8000DBBAF6 /* ViewModel */,
+				E2763FD42A0E2A5500DBBAF6 /* Model */,
+				E2763FD12A0E2A0900DBBAF6 /* Util */,
+				E2763FD22A0E2A1E00DBBAF6 /* View */,
 				E2763FAF2A0E296200DBBAF6 /* Info.plist */,
 			);
 			path = "Chat-365";
@@ -125,6 +124,63 @@
 				E2763FC42A0E296200DBBAF6 /* Chat_365UITestsLaunchTests.swift */,
 			);
 			path = "Chat-365UITests";
+			sourceTree = "<group>";
+		};
+		E2763FD12A0E2A0900DBBAF6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E2763FD62A0E2A9D00DBBAF6 /* Common */,
+				E2763FAA2A0E296200DBBAF6 /* Assets.xcassets */,
+				E2763FA12A0E295F00DBBAF6 /* AppDelegate.swift */,
+				E2763FA32A0E295F00DBBAF6 /* SceneDelegate.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E2763FD22A0E2A1E00DBBAF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2763FA72A0E295F00DBBAF6 /* Main.storyboard */,
+				E2763FAC2A0E296200DBBAF6 /* LaunchScreen.storyboard */,
+				E2763FD32A0E2A3100DBBAF6 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2763FD32A0E2A3100DBBAF6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2763FA52A0E295F00DBBAF6 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E2763FD42A0E2A5500DBBAF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2763FD52A0E2A8000DBBAF6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E2763FD62A0E2A9D00DBBAF6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E2763FD72A0E2AC100DBBAF6 /* FirebaseMAnager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FirebaseMAnager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
