@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class AuthenticationViewController: UIViewController {
 
@@ -39,6 +40,7 @@ class AuthenticationViewController: UIViewController {
         email.delegate = self
         password.delegate = self
         confirmPassword.delegate = self
+        setupBackgroundGeasture()
     }
 
     @IBAction func resendEmail(_ sender: Any) {
@@ -48,7 +50,7 @@ class AuthenticationViewController: UIViewController {
             
         }
         else {
-            
+            ProgressHUD.showError("Please Enter all fields correctly")
         }
     }
    
@@ -118,5 +120,14 @@ extension AuthenticationViewController {
         default:
             return false
         }
+    }
+    
+    // MARK: - tap geasture recognizer
+    private func setupBackgroundGeasture(){
+        let tapGeasture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGeasture)
+    }
+    @objc func hideKeyboard(){
+        view.endEditing(false)
     }
 }
