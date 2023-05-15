@@ -44,13 +44,24 @@ class AuthenticationViewController: UIViewController {
     @IBAction func resendEmail(_ sender: Any) {
     }
     @IBAction func forgetPassword(_ sender: Any) {
+        if isDataInputFor(mode: "forgetPassword"){
+            
+        }
+        else {
+            
+        }
     }
    
     @IBAction func resendEmailAction(_ sender: Any) {
     }
     
     @IBAction func authenticate(_ sender: Any) {
-        
+        if isDataInputFor(mode: isLogin ? "login" : "register"){
+            
+        }
+        else {
+            
+        }
     }
     
     @IBAction func questionAction(_ sender: Any) {
@@ -78,6 +89,7 @@ extension AuthenticationViewController {
             authenticationBtn.setTitle("Login", for: .normal)
             questionBtn.setTitle("Register", for: .normal)
         questionLable.text = "Do you have an account?"
+            imageView.image = UIImage(named: "login")
         }
         else{
                 viewTitle.text = "Register"
@@ -88,8 +100,23 @@ extension AuthenticationViewController {
                 authenticationBtn.setTitle("Register", for: .normal)
                 questionBtn.setTitle("Login", for: .normal)
             questionLable.text = "Create Account?"
+            imageView.image = UIImage(named: "signup")
         }
-        
         isLogin.toggle()
+    }
+    
+    private func isDataInputFor(mode: String) -> Bool {
+        switch mode {
+        case "login":
+            return email.text != "" && password.text != ""
+        
+        case "register":
+            return email.text != "" && password.text != nil && confirmPassword.text == password.text
+            
+        case "forgetPassword":
+            return email.text != ""
+        default:
+            return false
+        }
     }
 }
