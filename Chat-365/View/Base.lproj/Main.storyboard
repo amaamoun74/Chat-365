@@ -36,6 +36,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                         <connections>
+                                            <action selector="questionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mz5-Ji-AxC"/>
                                             <action selector="setQuestionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1E1-40-eJ7"/>
                                         </connections>
                                     </button>
@@ -51,13 +52,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-Ws-JOr">
-                                <rect key="frame" x="251" y="562" width="126" height="34.333333333333336"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtJ-zM-GKX">
+                                <rect key="frame" x="154" y="625" width="87" height="34.333333333333314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Resend Email"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register" cornerStyle="large"/>
                                 <connections>
-                                    <action selector="resendEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HLT-vX-EAn"/>
+                                    <action selector="authenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jkh-a0-vbk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-Ws-JOr">
+                                <rect key="frame" x="242" y="562" width="135" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Resend Email?"/>
+                                <connections>
+                                    <action selector="resendEmailAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SV8-TC-ufP"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeJ-8i-x7y">
@@ -66,11 +76,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sS-Rn-HMA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sS-Rn-HMA">
                                 <rect key="frame" x="20" y="482" width="138.66666666666666" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="WZi-TD-jE0"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,12 +88,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eea-Oj-QYb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eea-Oj-QYb">
                                 <rect key="frame" x="20" y="402" width="73.333333333333329" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="beZ-Dz-bpJ"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,23 +106,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtC-iR-f6Y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtC-iR-f6Y">
                                 <rect key="frame" x="20" y="320" width="40.666666666666664" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="aRF-d5-PU3"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtJ-zM-GKX">
-                                <rect key="frame" x="154" y="625" width="87" height="34.333333333333314"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYW-4M-v2T">
+                                <rect key="frame" x="20" y="562" width="160" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Register" cornerStyle="large"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forget Password?"/>
                                 <connections>
-                                    <action selector="authenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jkh-a0-vbk"/>
+                                    <action selector="forgetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sfh-k5-oYY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -133,10 +147,13 @@
                         <outlet property="confirmPasswordLabel" destination="9sS-Rn-HMA" id="6o4-Cy-phn"/>
                         <outlet property="email" destination="zco-wk-zqJ" id="wc8-Ig-fuO"/>
                         <outlet property="emailLabel" destination="DtC-iR-f6Y" id="HJa-s6-cZa"/>
+                        <outlet property="forgetPasswordBtn" destination="vYW-4M-v2T" id="BO4-Zy-D5x"/>
                         <outlet property="imageView" destination="VaB-P3-4Pj" id="Fcl-uq-oBI"/>
                         <outlet property="password" destination="U2n-2A-x5T" id="VXb-8A-uXn"/>
                         <outlet property="passwordLabel" destination="Eea-Oj-QYb" id="Otx-8j-bE7"/>
-                        <outlet property="questionBtn" destination="3ec-X8-Gtk" id="84a-EZ-LsA"/>
+                        <outlet property="questionBtn" destination="3ec-X8-Gtk" id="cX4-n6-sIx"/>
+                        <outlet property="questionLable" destination="Qck-YH-ZjC" id="I0j-Q0-IRT"/>
+                        <outlet property="resendEMailBtn" destination="ayC-Ws-JOr" id="44p-ro-fu0"/>
                         <outlet property="viewTitle" destination="MsI-kw-knW" id="2XP-ZK-m6w"/>
                     </connections>
                 </viewController>
